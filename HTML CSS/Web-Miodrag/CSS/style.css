@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  /* box-sizing: border-box; */
+}
+
+h1 {
+  border: 1px solid pink; /* 1px debljina ivice, solid popunjena linija, pink - boja */
+}
+
+p {
+  border: 2px solid black;
+  color: green;
+  background-color: blueviolet;
+  /* padding: 10px; */
+  margin: 10px;
+}
+
+span {
+  border: 1px solid red;
+}
+
+.prviPEelement {
+  color: blue;
+}
+
+#prviAjdi {
+  color: brown;
+}

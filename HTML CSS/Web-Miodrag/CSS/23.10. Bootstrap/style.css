@@ -1,0 +1,23 @@
+.row > * {
+  background-color: plum;
+  border: 1px solid black;
+}
+
+.carousel {
+  width: 500px;
+}
+
+.neki-div {
+  font-size: 44px;
+  animation: slide-right 6s infinite;
+  /* animation-delay: 1s; */
+}
+
+@keyframes slide-right {
+  from {
+    margin-left: -1000px;
+  }
+  to {
+    margin-left: 0%;
+  }
+}

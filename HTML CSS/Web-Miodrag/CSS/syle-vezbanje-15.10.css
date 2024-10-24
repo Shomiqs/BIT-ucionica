@@ -1,0 +1,69 @@
+* {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: AkayaKanadaka;
+  src: url(Fonts/AkayaKanadaka-Regular.ttf);
+}
+
+.prvi {
+  color: turquoise;
+  background-color: purple;
+  opacity: 50%;
+  font-family: Pacifico;
+  font-size: 22px;
+}
+
+.drugi {
+  color: rgb(64, 224, 208);
+  background-color: blue;
+  background-color: rgba(64, 0, 0, 0.5);
+  font-family: AkayaKanadaka;
+  font-style: oblique;
+}
+
+.treci {
+  color: #40e0d0;
+  background-color: orangered;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.quote1 {
+  opacity: 1;
+  color: black;
+  font-family: monospace;
+}
+
+.quote2 {
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.quote3 {
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cetvrtiSp {
+  font-weight: 700;
+  font-style: italic;
+}
+
+.colRed {
+  background-color: red;
+}
+
+.colBlue {
+  background-color: blue;
+}
+.colYell {
+  background-color: yellow;
+}
+.colGreen {
+  background-color: green;
+}
+.colPurple {
+  background-color: purple;
+}
