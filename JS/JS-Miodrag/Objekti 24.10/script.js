@@ -146,6 +146,14 @@
 //     return obj.cuisine;
 //   };
 //   // ----------------------------------------------------------------
+
+//   // obj.deleteIngredient = function (ingredient) {
+//   //   // return obj.ingredients.filter(function(e,i,arr){
+//   //   //   return e !== ingredient
+//   //   // })
+//   //   return this.ingredients.splice(this.ingredients.indexOf(ingredient));
+//   // };
+
 //   return obj;
 // }
 
@@ -161,6 +169,7 @@
 // recipe.addNewIngredient("salt");
 // recipe.addNewIngredient("salt");
 // recipe.typeOfCuisine("French");
+// recipe.deleteIngredient("vegetables");
 
 // let updatedIngredients = recipe.allIngredients();
 // let prepTime = recipe.prepUnder15min();
@@ -253,3 +262,52 @@
 // }
 // console.log(eachLetter("dodo"));
 // ----------------------------------------------------------------------------------------------
+
+// *** VEZBANJE - Objekti (random) ***
+// ----------------------------------------------------------------------------------------------
+
+// function createObject(name, size, color, width) {
+//   return {
+//     name_obj: name,
+//     size_obj: size,
+//     color_obj: color,
+//     width_obj: width,
+//     speak_obj: function () {
+//       console.log(this.name_obj);
+//     },
+//   };
+// }
+
+// let obj = createObject("Martin", 1, "blue", 200);
+// console.log(obj);
+// obj.speak_obj();
+// ----------------------------------------------------------------------------------------------
+
+// function createObject2(name, size, color, width) {
+//   let obj = {};
+//   obj.name_obj = name;
+//   obj.size_obj = size;
+//   obj.width_obj = width;
+//   obj.color_obj = color;
+//   obj.speak_obj = function () {
+//     console.log(this.name_obj);
+//   };
+//   return obj;
+// }
+
+// let obj2 = createObject2("blabla", 2, "red", 150);
+// console.log(obj2);
+// obj2.speak_obj();
+// ----------------------------------------------------------------------------------------------
+// let obj = {
+//   name: "Pera",
+// };
+
+// function addObjProperty(obj, keyName, keyValue) {
+//   obj[keyName] = keyValue;
+// }
+
+// addObjProperty(obj, "color", "green");
+// console.log(obj);
+// addObjProperty(obj, "color", "blue");
+// console.log(obj);
