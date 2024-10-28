@@ -4,7 +4,7 @@
 //   name: "Miodrag", // property (key: value)
 //   surname: "Ivankov",
 //   age: 34,
-//   height: 186,
+//   height: 185,
 //   siblings: ["Miki", "Nemanja", "Ivana", "Irena"],
 //   married: false,
 //   hobbies: ["paddel", "chess", "snowboarding"],
