@@ -99,7 +99,124 @@
 // Input: [-1, 8.1, 3, 6, 2.3, 44, 2.11]
 // Output: 4
 
-let x = true;
-console.log(x);
-console.log(!x);
-console.log(!!x);
+// let array = [-1, 8.1, 3, 6, 2.3, 44, 2.11];
+
+// function countNumOfElements(arr) {
+//   let result = [];
+//   if (arr.length % 2 !== 0) {
+//     let middleIndex = Math.floor(arr.length / 2);
+
+//     for (let i = 0; i < middleIndex; i++) {
+//       result.push(arr[i]);
+//     }
+//   } else {
+//     console.log("Error, array has an even number of elements!");
+//   }
+//   return result;
+// }
+// console.log(countNumOfElements(array));
+
+// -------------------------------------------------------------------------------------------------------
+// TASK 4.
+// Write a function that finds the smallest element of a given array. The function should
+// return an object that contains the smallest value and its last position in the array.
+// Input: [1, 4, -2, 11, 8, 1, -2, 3]
+// Output: { minValue: -2, minLastIndex: 6 }
+
+// let array = [1, 4, -2, 11, 8, 1, -2, 3];
+
+// function smallestElementOfArray(arr) {
+//   let smallestElement = arr[0];         // Postavi prvi element kao najmanji
+//   let lastIndex = 0;                    // Inicijalizuj poslednji indeks
+
+//   for (let i = 1; i < arr.length; i++) {// Počni od drugog elementa
+//     if (arr[i] < smallestElement) {// Ako je trenutni element manji od najmanjeg
+//       smallestElement = arr[i]; // Ažuriraj najmanji element
+//       lastIndex = i; // Ažuriraj poslednji indeks
+//     } else if (arr[i] === smallestElement) {// Ako je trenutni element jednak najmanjem
+//       lastIndex = i; // Ažuriraj poslednji indeks
+//     }
+//   }
+//   return { value: smallestElement, index: lastIndex }; // Vraća objekat sa najmanjom vrednošću i njenim indeksom
+// }
+// console.log(smallestElementOfArray(array)); // Ispisuje: { value: -2, index: 6 }
+
+// -------------------------------------------------------------------------------------------------------
+// Nacin sa built-in metodama:
+
+// let array = [1, 4, -2, 11, 8, 1, -2, 3];
+
+// function smallestElementOfArray(arr) {
+//   let smallestElement = Math.min(...arr);
+//   let minLastIndex = arr.lastIndexOf(smallestElement);
+//   return { smallestElement, minLastIndex };
+// }
+
+// console.log(smallestElementOfArray(array));
+
+// -------------------------------------------------------------------------------------------------------
+// TASK 5.
+// a. Write a function that finds all the elements in a given array less than a given
+// element.
+// Input: [2, 3, 8, -2, 11, 4], 6
+// Output: [2, 3, -2, 4]
+
+// stari nacin, samo sa push metodom:
+
+// function findSmallerThanGivenElement(arr, givenEl) {
+//   let smallest = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] < givenEl) {
+//       smallest.push(arr[i]);
+//     }
+//   }
+//   return smallest;
+// }
+// console.log(findSmallerThanGivenElement([2, 3, 8, -2, 11, 4], 6));
+
+// -------------------------------------------------------------------------------------------------------
+// bez for petlje sa filter metodom:
+
+// function findSmallerThanGivenElement(arr, givenEl) {
+//   return arr.filter(function (element) {
+//     return element < givenEl; // Vraća true za elemente manje od zadatog
+//   });
+// }
+
+// console.log(findSmallerThanGivenElement([2, 3, 8, -2, 11, 4], 6));
+// -------------------------------------------------------------------------------------------------------
+
+// b. Write a function that finds all the elements in a given array that start with the “pro”
+// substring. The function should be case insensitive.
+// Input: ["JavaScript", "Programming", "fun", "product"]
+// Output: ["Programming", "product"]
+
+// let array = ["JavaScript", "Programming", "fun", "product"];
+
+// function findProInElements(arr) {
+//   return arr.filter(function (element) { // filtrira elemente niza, umesto petlje
+//     return element.toLowerCase().includes("pro"); // Proverava da li element sadrzi "pro"
+//   });
+// }
+
+// console.log(findProInElements(array));
+
+// -------------------------------------------------------------------------------------------------------
+// c. Write a function that expects an array and a callback function that filters out
+// some of the elements. Use functions defined in a) or b) to test it.
+
+let array = ["JavaScript", "Programming", "fun", "product"];
+
+function findProInElements(arr) {
+  return arr.filter(function (element) {
+    return element.toLowerCase().includes("pro"); // Proverava da li element sadrzi "pro"
+  });
+}
+
+function someFunc(arr, callbck) {
+  return callbck(arr); // Pozov callback funkcije sa prosledjenim nizom
+}
+
+console.log(someFunc(array, findProInElements));
+// -------------------------------------------------------------------------------------------------------
+// Task 6.
