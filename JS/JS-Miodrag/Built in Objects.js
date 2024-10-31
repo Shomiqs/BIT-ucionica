@@ -1,5 +1,7 @@
 "use strict";
 
+const { reduce } = require("d3-array");
+
 // ********** Exercises_Built in objects **********
 
 // TASK 1.
@@ -205,18 +207,45 @@
 // c. Write a function that expects an array and a callback function that filters out
 // some of the elements. Use functions defined in a) or b) to test it.
 
-let array = ["JavaScript", "Programming", "fun", "product"];
+// let array = ["JavaScript", "Programming", "fun", "product"];
 
-function findProInElements(arr) {
-  return arr.filter(function (element) {
-    return element.toLowerCase().includes("pro"); // Proverava da li element sadrzi "pro"
-  });
-}
+// function findProInElements(arr) {
+//   return arr.filter(function (element) {
+//     return element.toLowerCase().includes("pro"); // Proverava da li element sadrzi "pro"
+//   });
+// }
 
-function someFunc(arr, callbck) {
-  return callbck(arr); // Pozov callback funkcije sa prosledjenim nizom
-}
+// function someFunc(arr, callbck) {
+//   return callbck(arr); // Pozov callback funkcije sa prosledjenim nizom
+// }
 
-console.log(someFunc(array, findProInElements));
+// console.log(someFunc(array, findProInElements));
 // -------------------------------------------------------------------------------------------------------
 // Task 6.
+// a. Write a list (array) of products you usually buy in the supermarket. Write a price
+// and name for each product. For example,
+// [
+// {name: ‘apples’, price: 100},
+// {name: ‘milk’, price: 80},
+// {name:’bananas’, price: 150}
+// ]
+// b. Write a function that calculates the total price of your shopping list.
+// c. Write a function that calculates the average product price of your shopping list.
+//    Print this value with the precision of three decimals.
+// d. Write a function that prints out the name of the most expensive product on your
+// shopping list. Write the name in uppercase.
+
+let shoppingList = [
+  { name: "apples", price: 100 },
+  { name: "milk", price: 80 },
+  { name: "bananas", price: 150 },
+];
+
+function calculateTotalPrice(list) {
+  return list.reduce(function (total, item) {
+    return total + item.price;
+  }, 0);
+}
+
+let totalPrice = calculateTotalPrice(shoppingList);
+console.log("Total price:", totalPrice);
