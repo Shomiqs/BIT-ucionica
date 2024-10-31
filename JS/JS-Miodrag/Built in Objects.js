@@ -319,11 +319,22 @@ const { reduce } = require("d3-array");
 // let string = "IS EVERYTHING IN CAPITAL";
 
 // function containsDigits(arr) {
-//   return /\d/.test(arr); // .test() Returns a Boolean value that indicates whether or not a pattern exists in a searched string.
+//   return /[0-9]/.test(arr); //1.nacin = .test() Returns a Boolean value that indicates whether or not a pattern exists in a searched string.(poredi samo sa RegExp zapisom)
+//   // return /\d/.test(arr); //drugi nacin
 // }
 // console.log(containsDigits(string));
 // -------------------------------------------------------------------------------------------------------
 // c. Write a function that checks if a given string is a valid hexadecimal color.
+
+function isHexadecimal(str) {
+  return /^[0-9a-fA-F]+$/.test(str); // ^[0-9a-fA-F]+$ Regex izraz
+}
+
+let hexString = "1A3F";
+let nonHexString = "1G2Z";
+
+console.log(isHexadecimal(hexString));
+console.log(isHexadecimal(nonHexString));
 
 // -------------------------------------------------------------------------------------------------------
 
