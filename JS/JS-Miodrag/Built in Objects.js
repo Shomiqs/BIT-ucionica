@@ -222,30 +222,115 @@ const { reduce } = require("d3-array");
 // console.log(someFunc(array, findProInElements));
 // -------------------------------------------------------------------------------------------------------
 // Task 6.
-// a. Write a list (array) of products you usually buy in the supermarket. Write a price
-// and name for each product. For example,
-// [
-// {name: ‘apples’, price: 100},
-// {name: ‘milk’, price: 80},
-// {name:’bananas’, price: 150}
-// ]
-// b. Write a function that calculates the total price of your shopping list.
-// c. Write a function that calculates the average product price of your shopping list.
-//    Print this value with the precision of three decimals.
-// d. Write a function that prints out the name of the most expensive product on your
-// shopping list. Write the name in uppercase.
 
-let shoppingList = [
-  { name: "apples", price: 100 },
-  { name: "milk", price: 80 },
-  { name: "bananas", price: 150 },
-];
+// // a. Write a list (array) of products you usually buy in the supermarket. Write a price
+// // and name for each product. For example,
+// // [
+// // {name: ‘apples’, price: 100},
+// // {name: ‘milk’, price: 80},
+// // {name:’bananas’, price: 150}
+// // ]
 
-function calculateTotalPrice(list) {
-  return list.reduce(function (total, item) {
-    return total + item.price;
-  }, 0);
-}
+// let shoppingList = [
+//   { name: "apples", price: 100 },
+//   { name: "milk", price: 80 },
+//   { name: "bananas", price: 150 },
+// ];
 
-let totalPrice = calculateTotalPrice(shoppingList);
-console.log("Total price:", totalPrice);
+// // -------------------------------------------------------------------------------------------------------
+// // b. Write a function that calculates the total price of your shopping list.
+
+// function calculateTotalPrice(list) {
+//   return list.reduce(function (total, item) {
+//     return total + item.price;
+//   }, 0); // Nula na kraju reduce metode predstavlja inicijalnu vrednost akumuliranog rezultata.
+//   // U ovom slučaju, kada se reduce funkcija pokrene, total (akumulirani rezultat) počinje od nule.
+//   // Total predstavlja cenu svih item-a
+// }
+
+// let totalPrice = calculateTotalPrice(shoppingList);
+// console.log("Total price:", totalPrice);
+
+// // -------------------------------------------------------------------------------------------------------
+// // c. Write a function that calculates the average product price of your shopping list.
+// // Print this value with the precision of three decimals.
+
+// function calculateAveragePrice(arr) {
+//   // let avg = arr.reduce(function (average, item) {
+//   //   return average + item.price;
+//   // }, 0);
+//   // return avg / arr.length;
+//   return calculateTotalPrice(arr) / arr.length; // (Mogu ovde da pozovem prethodno napisanu funkciju i iskoristim da izracuna total price i samo podelim sa arr.length;)
+// }
+
+// let averagePrice = calculateAveragePrice(shoppingList);
+// console.log("Average price:", averagePrice);
+
+// // -------------------------------------------------------------------------------------------------------
+// // d. Write a function that prints out the name of the most expensive product on your
+// // shopping list. Write the name in uppercase.
+
+// function mostExpensiveProduct(array) {
+//   return array.reduce(function (max, item) {
+//     if (item.price > max.price) {
+//       return item;
+//     } else {
+//       return max;
+//     }
+//   }).name;
+// }
+
+// let mostExpensive = mostExpensiveProduct(shoppingList);
+// console.log("Most exprensive product:", mostExpensive);
+
+// -------------------------------------------------------------------------------------------------------
+// TASK 7.
+// a. Write a function that checks if a given string is written in all capitals.
+// let recenica = "IS EVERYTHING IN CAPITAL";
+
+// function checkIfCapital(str) {
+//   let toCap = str.toUpperCase();
+//   return str === toCap ? "It is." : "It is not.";
+// }
+// console.log(checkIfCapital(recenica));
+// -------------------------------------------------------------------------------------------------------
+// a. Drugi nacin:
+
+// let recenica = "IS EVERYTHING IN CAPITAL";
+
+// function checkIfCapital(str) {
+//   let toCap = str.toUpperCase();
+//   let result = str.localeCompare(toCap);
+//   return result === 0 ? "It is." : "It is not.";
+// }
+// console.log(checkIfCapital(recenica));
+// -------------------------------------------------------------------------------------------------------
+// a. Treci nacin:
+
+// let recenica = "IS EVERYTHING IN CAPITAL";
+
+// function checkCapital(strr) {
+//   return strr === strr.toUpperCase();
+// }
+// console.log(checkCapital(recenica));
+// -------------------------------------------------------------------------------------------------------
+// b. Write a function that checks if a given string contains any digits.
+
+// let string = "IS EVERYTHING IN CAPITAL";
+
+// function containsDigits(arr) {
+//   return /\d/.test(arr); // .test() Returns a Boolean value that indicates whether or not a pattern exists in a searched string.
+// }
+// console.log(containsDigits(string));
+// -------------------------------------------------------------------------------------------------------
+// c. Write a function that checks if a given string is a valid hexadecimal color.
+
+// -------------------------------------------------------------------------------------------------------
+
+// d. Write a function that checks if a given number belongs to the interval from 1900
+// to 2018.
+// -------------------------------------------------------------------------------------------------------
+
+// e. Write a function named validator that returns an object with properties
+// stringValidator, passwordValidator, colorValidator, and yearValidator referencing
+// the functions from a) to d).
