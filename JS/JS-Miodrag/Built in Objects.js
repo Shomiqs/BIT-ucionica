@@ -309,39 +309,131 @@ const { reduce } = require("d3-array");
 
 // let recenica = "IS EVERYTHING IN CAPITAL";
 
-// function checkCapital(strr) {
-//   return strr === strr.toUpperCase();
-// }
+function checkCapital(strr) {
+  return strr === strr.toUpperCase();
+}
 // console.log(checkCapital(recenica));
 // -------------------------------------------------------------------------------------------------------
 // b. Write a function that checks if a given string contains any digits.
 
 // let string = "IS EVERYTHING IN CAPITAL";
 
-// function containsDigits(arr) {
-//   return /[0-9]/.test(arr); //1.nacin = .test() Returns a Boolean value that indicates whether or not a pattern exists in a searched string.(poredi samo sa RegExp zapisom)
-//   // return /\d/.test(arr); //drugi nacin
-// }
+function containsDigits(arr) {
+  return /[0-9]/.test(arr); //1.nacin = .test() Returns a Boolean value that indicates whether or not a pattern exists in a searched string.(poredi samo sa RegExp zapisom)
+  return /\d/.test(arr); //drugi nacin
+}
 // console.log(containsDigits(string));
 // -------------------------------------------------------------------------------------------------------
 // c. Write a function that checks if a given string is a valid hexadecimal color.
+// (testiraj i sa #, hexadecimalni broj koji pocinje sa #)
 
 function isHexadecimal(str) {
   return /^[0-9a-fA-F]+$/.test(str); // ^[0-9a-fA-F]+$ Regex izraz
 }
 
-let hexString = "1A3F";
-let nonHexString = "1G2Z";
+// let hexString = "1A3F";
+// let nonHexString = "1G2Z";
 
-console.log(isHexadecimal(hexString));
-console.log(isHexadecimal(nonHexString));
+// console.log(isHexadecimal(hexString));
+// console.log(isHexadecimal(nonHexString));
 
 // -------------------------------------------------------------------------------------------------------
 
 // d. Write a function that checks if a given number belongs to the interval from 1900
 // to 2018.
+
+// function checkInterval(arr) {
+//   if (arr >= 1900 && arr <= 2018) {
+//     return "Interval belongs between 1900 and 2018!";
+//   } else {
+//     return "Interval does not belong between 1900 and 2018!";
+//   }
+// }
+// console.log(checkInterval(2015));
+
+// -------------------------------------------------------------------------------------------------------
+// Datum validator:
+
+function isValidDate(dateString) {
+  let date = new Date(dateString);
+
+  // Proveravamo da li je datum validan i da li se string podudara sa konvertovanim datumom
+  return (
+    date instanceof Date &&
+    !isNaN(date) &&
+    date.toISOString().slice(0, 10) === dateString
+  );
+}
+
+// console.log(isValidDate("2024-11-01")); // true
+// console.log(isValidDate("2024-02-30")); // false
+// console.log(isValidDate("invalid-date")); // false
+
 // -------------------------------------------------------------------------------------------------------
 
 // e. Write a function named validator that returns an object with properties
 // stringValidator, passwordValidator, colorValidator, and yearValidator referencing
 // the functions from a) to d).
+
+function validator(stringVal, passVal, colorVal, yearVal) {
+  return {
+    stringVal,
+    passVal,
+    colorVal,
+    yearVal,
+  };
+}
+console.log(
+  validator(checkCapital, containsDigits, isHexadecimal, isValidDate)
+);
+
+// -------------------------------------------------------------------------------------------------------
+// TASK 8.
+// Write a function that calculates a number of days to your birthday.
+// Input: 25 February
+// Output: 5 days
+
+// function daysUntilBirthday() {
+//   let today = new Date();
+//   let currentYear = today.getFullYear();
+//   let birthdayThisYear = new Date(currentYear, 9, 27); // Meseci se broje od 0 (oktobar je 9)
+
+//   // Ako je rođendan već prošao ove godine, računa se za sledeću godinu
+//   if (today > birthdayThisYear) {
+//     birthdayThisYear.setFullYear(currentYear + 1);
+//   }
+
+//   let differenceInTime = birthdayThisYear - today;
+//   let differenceInDays = Math.ceil(differenceInTime / (1000 * 3600 * 24));
+
+//   return differenceInDays;
+// }
+
+// console.log(`Ostalo je ${daysUntilBirthday()} dana do mog rođendana!`);
+
+// -------------------------------------------------------------------------------------------------------
+//  NIKOLINO RESENJE: da li radi as intended?!?!
+// function calculateDateBetween(inputDate) {
+//   try {
+//     var currentDate = new Date();
+//     if (
+//       !inputDate ||
+//       !inputDate instanceof Date ||
+//       inputDate.getTime() < currentDate.getTime()
+//     ) {
+//       throw new Error("Input date is invalid");
+//     }
+
+//     var numberOfMilisecondsPerDay = 1000 * 60 * 60 * 24;
+//     var result = Math.floor(
+//       (inputDate.getTime() - currentDate.getTime()) / numberOfMilisecondsPerDay
+//     );
+//     return result;
+//   } catch (err) {
+//     console.log(err.message);
+//   }
+// }
+
+// console.log(calculateDateBetween(new Date(2024, 10, 27))); // (Meseci se racunaju od 0. do 11. Sto znaci da je januar 0, a decembar 11)
+
+// -------------------------------------------------------------------------------------------------------
