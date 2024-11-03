@@ -104,9 +104,12 @@ function Program(date) {
   this.totalNumOfMovies = 0;
   this.addMovie = function (movie) {
     this.movies.push(movie);
-    this.totalMovies++;
+    this.totalNumOfMovies++;
   };
 }
+
+const programm = new Program("Terminator");
+console.log(programm.addMovie());
 
 // Konstruktorska funkcija za Festival:
 
