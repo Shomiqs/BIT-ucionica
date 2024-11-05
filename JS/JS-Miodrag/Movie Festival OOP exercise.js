@@ -92,7 +92,7 @@ function Movie(title, genre, leng) {
   };
 }
 // test |
-const moviee = new Movie("The Shawshank Redemption", "Action", "130min");
+const moviee = new Movie("The Shawshank Redemption", actionGenre, "130min");
 console.log(moviee.getData());
 // test |
 
@@ -103,9 +103,10 @@ function Program(date) {
   this.listOfMovies = [];
   this.totalNumOfMovies = 0;
   this.addMovie = function (movie) {
-    this.movies.push(movie);
-    this.totalMovies++;
+    this.listOfMovies.push(movie);
+    this.totalNumOfMovies++;
   };
+  this.getData = function () {};
 }
 
 // Konstruktorska funkcija za Festival:
@@ -113,5 +114,9 @@ function Program(date) {
 function Festival(name) {
   this.name = name;
   this.listOfProgram = [];
-  this.numOFmovies = 0;
+  this.numOfMovies = 0;
+  this.AddProgram = function (program) {
+    this.listOfProgram.push(program);
+    this.numOfMovies++;
+  };
 }
