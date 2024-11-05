@@ -109,6 +109,9 @@ function Program(date) {
   this.getData = function () {};
 }
 
+const programm = new Program("Terminator");
+console.log(programm.addMovie());
+
 // Konstruktorska funkcija za Festival:
 
 function Festival(name) {
