@@ -62,3 +62,5 @@ class BackendProgrammer extends Programmer {
 
 let bEProgrammer = new BackendProgrammer("Mika", "Mikic", 30, 5, "C#");
 console.log(bEProgrammer.getInfo());
+
+// -------------------------------------------------------------------------------------------------------------
