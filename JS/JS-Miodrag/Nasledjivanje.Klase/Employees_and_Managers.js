@@ -80,8 +80,8 @@ class Manager extends Employee {
   }
 }
 
-let employee = new Employee("Pera", "Peric", "Programer", 3000);
-let developer = new Developer("Mio", "Iva", "Programer", 5000, "JS");
+let employee = new Employee("Pera", "Peric", "Programmer", 3000);
+let developer = new Developer("Mio", "Iva", "Programmer", 5000, "JS");
 let manager = new Manager("Mika", "Mikic", "Manager", 2000, "Finance");
 
 // console.log(employee);
