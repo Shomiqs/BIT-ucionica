@@ -232,16 +232,16 @@
 //-------------------------------------------------------------------------------------------
 // uradjeno kroz forEach:
 
-const array = [6, 11, 9, 0, 3];
+// const array = [6, 11, 9, 0, 3];
 
-const filterEven = (arr) => {
-  let filtered = [];
-  arr.forEach((num) => {
-    if (num % 2 === 0) {
-      filtered.push(num);
-    }
-  });
-  return filtered;
-};
+// const filterEven = (arr) => {
+//   let filtered = [];
+//   arr.forEach((num) => {
+//     if (num % 2 === 0) {
+//       filtered.push(num);
+//     }
+//   });
+//   return filtered;
+// };
 
-console.log(filterEven(array));
+// console.log(filterEven(array));
