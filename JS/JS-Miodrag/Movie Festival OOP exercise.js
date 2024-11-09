@@ -103,8 +103,9 @@ function Program(date) {
   this.listOfMovies = [];
   this.totalNumOfMovies = 0;
   this.addMovie = function (movie) {
-    this.movies.push(movie);
+    this.listOfMovies.push(movie);
     this.totalNumOfMovies++;
+    return this.listOfMovies;
   };
 }
 
@@ -115,6 +116,7 @@ console.log(programm.addMovie());
 
 function Festival(name) {
   this.name = name;
-  this.listOfProgram = [];
-  this.numOFmovies = 0;
+  this.listOfPrograms = [];
+  this.numOfMovies = 0;
 }
+// ---------------------------------------------------------------------------------------------
