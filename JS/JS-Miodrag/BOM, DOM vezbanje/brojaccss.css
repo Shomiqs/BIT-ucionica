@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div {
+  height: 100vh;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.button1,
+.button4 {
+  height: 40px;
+  width: 40px;
+  background-color: blueviolet;
+}
+
+.button2,
+.button3 {
+  height: 80px;
+  width: 80px;
+  background-color: rgb(205, 175, 233);
+}
+
+.clear {
+  height: 50px;
+  width: 120px;
+  background-color: rgb(201, 127, 219);
+}
+
+h1 {
+  font-size: 100px;
+}
+
+button {
+  box-shadow: 10px 10px 5px grey;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 20px;
+}

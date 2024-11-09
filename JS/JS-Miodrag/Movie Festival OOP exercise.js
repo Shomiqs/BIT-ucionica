@@ -92,7 +92,7 @@ function Movie(title, genre, leng) {
   };
 }
 // test |
-const moviee = new Movie("The Shawshank Redemption", "Action", "130min");
+const moviee = new Movie("The Shawshank Redemption", actionGenre, "130min");
 console.log(moviee.getData());
 // test |
 
@@ -107,6 +107,7 @@ function Program(date) {
     this.totalNumOfMovies++;
     return this.listOfMovies;
   };
+  this.getData = function () {};
 }
 
 const programm = new Program("Terminator");
@@ -116,7 +117,7 @@ console.log(programm.addMovie());
 
 function Festival(name) {
   this.name = name;
-  this.listOfPrograms = [];
-  this.numOfMovies = 0;
+  this.listOfProgram = [];
+  this.numOFmovies = 0;
 }
 // ---------------------------------------------------------------------------------------------
