@@ -1,6 +1,6 @@
 // *** Task 1 *** // Write a program that calculates the maximum of two given numbers.
 
-const { element } = require("prop-types");
+// const { element } = require("prop-types");
 
 // function maxOfTwo(a, b) {
 //   if (a > b) {

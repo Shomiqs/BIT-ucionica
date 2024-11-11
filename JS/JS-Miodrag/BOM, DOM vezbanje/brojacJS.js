@@ -27,3 +27,4 @@ minusFive.addEventListener("click", () => {
 clear.addEventListener("click", () => {
   brojac.innerText = 0;
 });
+// ---------------------------------------------------------------------
