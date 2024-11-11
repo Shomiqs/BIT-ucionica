@@ -56,34 +56,31 @@ const wrapper = document.querySelector(".wrapper");
 // wrapper.append(card);
 // // ------------------------------------------------------------------------------
 
-function existingData() {
-  if (data.length === 0) {
-    wrapper.innerHTML = "<h2>Sorry no results!</h2>";
-    console.log("No data!");
-  } else {
-    data.forEach((element, index, array) => {
-      // createElements
-      const card = document.createElement("div");
-      const title = document.createElement("h3");
-      const subTitle = document.createElement("h5");
-      const profilePic = document.createElement("img");
+if (data.length === 0) {
+  wrapper.innerHTML = "<h2>Sorry no results!</h2>";
+  console.log("No data!");
+} else {
+  data.forEach((element, index, array) => {
+    // 1. createElements
+    const card = document.createElement("div");
+    const title = document.createElement("h3");
+    const subTitle = document.createElement("h5");
+    const profilePic = document.createElement("img");
 
-      // add content
+    // 2. add content
 
-      title.innerHTML = element.name;
-      subTitle.innerHTML = `Age: ${element.age}`;
-      card.className = "card";
-      profilePic.src =
-        "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541";
+    title.innerHTML = element.name;
+    subTitle.innerHTML = `Age: ${element.age}`;
+    card.className = "card";
+    profilePic.src =
+      "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541";
 
-      // append elements
+    // 3. append elements
 
-      card.append(profilePic, title, subTitle);
-      wrapper.append(card);
-    });
-  }
+    card.append(profilePic, title, subTitle);
+    wrapper.append(card);
+  });
 }
-existingData();
 
 // ISTO:
 
