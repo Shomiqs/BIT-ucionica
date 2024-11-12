@@ -95,6 +95,8 @@ hostingYes.innerHTML = "Yes";
 hostingNo.innerHTML = "No";
 hostingInpYes.type = "radio";
 hostingInpNo.type = "radio";
+hostingInpYes.name = "Radio";
+hostingInpNo.name = "Radio";
 
 project.innerHTML = "Project Description";
 projectInp.placeholder = "Project Description";
@@ -144,3 +146,29 @@ project.append(projectInp);
 
 container.append(button);
 //-------------------------------------------------------------------------------
+// Button action:
+
+button.onclick = () => {
+  const objData = {
+    firstName: firstNameInp.value,
+    lastName: lastNameInp.value,
+    email: emailInp.value,
+    phone: phoneInp.value,
+    address: addressInp.value,
+    city: cityInp.value,
+    state: stateInp.value,
+    zipCode: zipCodeInp.value,
+    webSite: webSiteInp.value,
+    project: projectInp.value,
+  };
+  if (hostingInpYes === true) {
+    objData.hosting = "Yes!";
+  } else if (hostingInpNo === true) {
+    objData.hosting = "No!";
+  } else {
+    objData.hosting = "None selected!";
+  }
+
+  console.log(objData);
+  console.log(hostingInpYes.checked);
+};
