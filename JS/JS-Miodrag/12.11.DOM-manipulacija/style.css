@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slika {
+  height: 250px;
+  width: 250px;
+  border-radius: 20px;
+}
+
+input {
+  margin-left: 5px;
+}
+
+.box {
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+li {
+  margin-top: 5px;
+  margin-left: 18px;
+}
