@@ -11,4 +11,5 @@ button.onclick = () => {
   dataP.innerHTML = inputField.value;
   // append element na chat:
   chatContainer.append(dataP);
+  inputField.value = "";
 };
