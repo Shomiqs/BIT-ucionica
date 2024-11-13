@@ -27,3 +27,5 @@ function showDogs(data) {
 }
 
 button.addEventListener("click", getDogImages);
+
+// window.addEventListener("load", getDogImages);

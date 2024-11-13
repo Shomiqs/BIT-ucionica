@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  gap: 10px;
+  width: 80%;
+  justify-content: center;
+}
+
+.charDiv {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+button {
+  margin: 10px 50px 10px 50px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid green;
+  color: green;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: green;
+  color: white;
+}
+
+p {
+  margin-top: 10px;
+  text-align: center;
+}
+
+img {
+  border-bottom: 1px solid black;
+}
