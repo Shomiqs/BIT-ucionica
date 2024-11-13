@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 70%;
+}
+
+.field {
+  position: relative;
+  width: 100%;
+}
+
+.player {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.button-div {
+  display: flex;
+  justify-content: end;
+}
+
+/* .button { */
+/* position: absolute;
+  right: 0;
+  bottom: 145px; */
+/* } */
+
+.button {
+  background-color: orangered;
+  height: 30px;
+  width: 100px;
+  color: white;
+  border-radius: 5px;
+}
