@@ -27,6 +27,11 @@ body {
   overflow: hidden;
 }
 
+.liked {
+  background-color: green;
+  color: white;
+}
+
 button {
   margin: 10px 50px 10px 50px;
   padding: 5px;
@@ -34,11 +39,6 @@ button {
   border: 1px solid green;
   color: green;
   cursor: pointer;
-}
-
-button:hover {
-  background-color: green;
-  color: white;
 }
 
 p {
