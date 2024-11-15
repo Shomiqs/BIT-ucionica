@@ -8,18 +8,50 @@
 const URL = "https://rickandmortyapi.com/api/character";
 const container = document.querySelector(".container");
 
+const prevButton = document.querySelector("#prev");
+const nextButton = document.querySelector("#next");
+let nextPageUrl;
+let prevPageUrl;
+
 function getCharacters() {
   fetch(URL)
     .then((response) => response.json())
-    .then((data) => showCharacters(data));
+    .then((data) => {
+      nextPageUrl = data.info.next;
+      prevPageUrl = data.info.prev;
+      showCharacters(data);
+    });
 }
 getCharacters();
 
+const newFetchData = (url) => {
+  fetch(url)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      nextPageUrl = data.info.next;
+      prevPageUrl = data.info.prev;
+      showCharacters(data);
+    });
+};
+
+prevButton.addEventListener("click", () => {
+  newFetchData(prevPageUrl);
+});
+nextButton.addEventListener("click", () => {
+  newFetchData(nextPageUrl);
+});
+
 function showCharacters(data) {
+  container.innerHTML = "";
   console.log(data?.results);
-  const char = data.results;
-  const selected = [];
+  const char = data.results || [];
+  const subContainer = document.createElement("div");
+  subContainer.className = "subContainer";
   // const subContainer = document.createElement("div");
+
+  const selected = JSON.parse(localStorage.getItem("char")) || [];
 
   char.forEach((e) => {
     // 1. pravljenje elemenata kartice:
@@ -30,29 +62,46 @@ function showCharacters(data) {
     const charName = document.createElement("p");
     const charButton = document.createElement("button");
     charButton.className = "button";
+    if (
+      selected.some((char) => {
+        return char.id === e.id;
+      })
+    ) {
+      charButton.classList.add("liked");
+    }
     // 2. dodeljivanje vrednosti elementima:
     charImg.setAttribute("src", e.image);
+    charImg.addEventListener("click", () => {
+      localStorage.setItem("charDetails", JSON.stringify(e));
+      window.open("charInfo.html");
+    }); // kada kliknemo sliku upisuje char detalje u local storage
     charName.textContent = e.name;
     charButton.textContent = "Like";
     // 3. appendovanje elemenata:
     charDiv.append(charImg, charName, charButton);
-    container.append(charDiv);
+    subContainer.append(charDiv);
+    container.append(subContainer);
 
     charButton.addEventListener("click", () => {
       charButton.classList.toggle("liked");
-      //---------------------
+      const selected = JSON.parse(localStorage.getItem("char")) || [];
       if (!selected.some((existingItem) => existingItem.id === e.id)) {
         selected.push(e);
-
         localStorage.setItem("char", JSON.stringify(selected));
+      } else {
+        const selected2 = selected.filter((char) => {
+          console.log(char.id !== e.id);
+          return char.id !== e.id;
+        });
+
+        console.log(selected2);
+        localStorage.setItem("char", JSON.stringify(selected2));
       }
       //---------------------
-
-      // localStorage.removeItem("char", JSON.stringify(selected));
     });
   });
 }
-showCharacters();
+// showCharacters();
 
 // proveri da li karakter postoji u nizu, ako ne postoji znaci da ga dodam u lokal storage,
 // Kada kliknem like, kroz niz u koji upisujem, da filtriram po ID-u.
