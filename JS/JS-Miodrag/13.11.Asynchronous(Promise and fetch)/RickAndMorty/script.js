@@ -73,7 +73,7 @@ function showCharacters(data) {
     charImg.setAttribute("src", e.image);
     charImg.addEventListener("click", () => {
       localStorage.setItem("charDetails", JSON.stringify(e));
-      window.open("charInfo.html");
+      window.open("charInfo.html", "_self"); // _self da bi otvorio u istom window-u, bez toga otvara novi tab.
     }); // kada kliknemo sliku upisuje char detalje u local storage
     charName.textContent = e.name;
     charButton.textContent = "Like";
