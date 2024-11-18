@@ -90,11 +90,11 @@ function showCharacters(data) {
         localStorage.setItem("char", JSON.stringify(selected));
       } else {
         const selected2 = selected.filter((char) => {
-          console.log(char.id !== e.id);
+          // console.log(char.id !== e.id);
           return char.id !== e.id;
         });
 
-        console.log(selected2);
+        // console.log(selected2);
         localStorage.setItem("char", JSON.stringify(selected2));
       }
       //---------------------

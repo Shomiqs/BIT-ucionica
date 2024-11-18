@@ -23,7 +23,7 @@ header {
 .subContainer {
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
+  width: 70%;
   justify-content: center;
   gap: 10px;
 }
