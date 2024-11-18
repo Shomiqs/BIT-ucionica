@@ -26,7 +26,7 @@ getSeasons();
 function getCast() {
   fetch(castURL)
     .then((response) => response.json())
-    .then((data) => showSeason(data));
+    .then((data) => showCast(data));
 }
 getCast();
 //---------------------------------------------------------------------------
@@ -57,4 +57,24 @@ function showSeason(data) {
     seasonCast.append(castList);
   });
 }
+
+function showCast(data) {
+  const totalSeasons = data.length;
+
+  const seasonDiv = document.createElement("div");
+  seasonDiv.className = "season";
+
+  const seasonName = document.createElement("h3");
+  seasonName.textContent = `Season (${totalSeasons})`;
+
+  seasonCast.append(seasonDiv);
+
+  data.forEach((cast) => {
+    console.log(cast);
+    const castList = document.createElement("li");
+    castList.className = "castList";
+    castList.textContent = `${cast.person.name}`;
+    seasonCast.append(castList);
+  });
+} 
 //---------------------------------------------------------------------------
