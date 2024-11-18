@@ -53,20 +53,28 @@ function showSeason(data) {
     seasonDiv.append(seasonDate);
   });
 
+  const summartTitle = document.createElement("h3");
+  const detailsContainer = document.createElement("div");
+
+  summartTitle.innerText = "Show Details";
   const summary = document.createElement("p");
   summary.innerHTML = showSeasons.summary;
-  infoContainer.append(summary);
+  detailsContainer.append(summartTitle);
+  detailsContainer.append(summary);
+  infoContainer.append(detailsContainer);
 }
 
 function showCast(data) {
+  const castContainer = document.createElement("div");
   const castTitle = document.createElement("h3");
   castTitle.innerText = "Cast";
-  right.append(castTitle);
+  castContainer.append(castTitle);
   data.forEach((cast) => {
     const castList = document.createElement("li");
     castList.className = "castList";
     castList.textContent = `${cast.person.name}`;
-    right.append(castList);
+    castContainer.append(castList);
   });
+  right.append(castContainer);
 }
 //---------------------------------------------------------------------------
