@@ -3,3 +3,19 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+
+.subscribers-container {
+  width: 40%;
+  margin: 20px auto;
+  border: 1px solid black;
+  border-radius: 20px;
+  height: 100%;
+  background-color: gainsboro;
+}

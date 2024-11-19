@@ -16,7 +16,7 @@ header {
   margin: 20px auto;
   border: 1px solid black;
   border-radius: 20px;
-  height: 80vh;
+  height: 100%;
   background-color: gainsboro;
 }
 
@@ -26,4 +26,12 @@ header {
 
 .posts {
   width: 100%;
+}
+
+.post {
+  border-top: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
 }

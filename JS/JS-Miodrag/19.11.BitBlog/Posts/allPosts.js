@@ -17,11 +17,26 @@ function showPosts(data) {
 
   post.slice(0, 10).forEach((e) => {
     // Pravljenje elemenata kartice:
-    const postDiv = document.createElement("div");
-    postsDiv.append(postDiv);
+    const onePostDiv = document.createElement("div");
+    onePostDiv.className = "post";
+    postsDiv.append(onePostDiv);
+
     const postTitle = document.createElement("p");
+    postTitle.id = "post-title";
     const postDescription = document.createElement("p");
+    postDescription.id = "post-description";
     const postAuthor = document.createElement("p");
-    postTitle.innerHTML = 
-});
+    postAuthor.id = "post-author";
+
+    postTitle.innerHTML = `Posts title: ${e.title}`;
+    postDescription.innerHTML = `Post description: ${e.description}`;
+    postAuthor.innerHTML = `Author: ${e.createdBy}`;
+
+    onePostDiv.append(postTitle, postDescription, postAuthor);
+
+    onePostDiv.addEventListener("click", () => {
+      localStorage.setItem("postDetails", JSON.stringify(e));
+      window.open("Posts/SinglePost/SinglePost.html");
+    });
+  });
 }
