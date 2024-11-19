@@ -10,6 +10,8 @@ function getShows() {
 }
 getShows();
 //---------------------------------------------------------------------------
+const searchInput = document.querySelector("#search-field");
+const searchResults = document.querySelector(".search-results");
 
 function showShows(data) {
   console.log(data);
@@ -18,7 +20,7 @@ function showShows(data) {
 
   show.slice(0, 50).forEach((e) => {
     // 1. Pravljenje elemenata kartice
-    const subDiv = document.createElement("div");
+    // const subDiv = document.createElement("div");
 
     const showDiv = document.createElement("div");
     const showImg = document.createElement("img");
@@ -28,8 +30,8 @@ function showShows(data) {
     showImg.setAttribute("src", e.image.medium);
     showName.textContent = e.name;
     // 3. appendovanje elemenata:
-    container.append(subDiv);
-    subDiv.append(showDiv);
+    container.append(showDiv);
+    // subDiv.append(showDiv);
     showDiv.append(showImg, showName);
     //---------------------------------------------------------------------------
 
@@ -39,3 +41,27 @@ function showShows(data) {
     });
   });
 }
+
+searchInput.addEventListener("keyup", (event) => {
+  // console.log('desio se keyup', event.target.value);
+  const searchInput = event.target.value;
+  fetch(`https://api.tvmaze.com/search/shows?q=${searchInput}`)
+    .then((res) => res.json())
+    .then((res) => showSearchOptions(res));
+});
+
+const showSearchOptions = (data) => {
+  searchResults.innerHTML = "";
+  data.forEach((show) => {
+    // console.log(show);
+    const searchTitle = document.createElement("p");
+
+    searchTitle.innerHTML = show.show.name;
+    searchTitle.addEventListener("click", () => {
+      localStorage.setItem("showDetails", JSON.stringify(show.show));
+      window.open("showInfo.html", "_self");
+    });
+
+    searchResults.append(searchTitle);
+  });
+};
