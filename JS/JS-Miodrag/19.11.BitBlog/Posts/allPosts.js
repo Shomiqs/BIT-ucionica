@@ -36,7 +36,7 @@ function showPosts(data) {
 
     onePostDiv.addEventListener("click", () => {
       localStorage.setItem("postDetails", JSON.stringify(e));
-      window.open("Posts/SinglePost/SinglePost.html");
+      window.open("./SinglePost/SinglePost.html");
     });
   });
 }
