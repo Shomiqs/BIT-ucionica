@@ -146,3 +146,4 @@ const input = ["banana", "banana", "cherry", "apple", "apple", "banana"];
 // od niza stringova, gde svaki string predstavlja neku vocku, napraviti objekat gde ce svaki key biti vocka, a njegov value biti broj koliko tih vocki ima u tom nizu
 
 // hint: reduce, pocetni acc: {}
+//
