@@ -1,0 +1,10 @@
+.posts-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.post-card {
+    border: 2px solid blue;
+    padding: 20px;
+}
