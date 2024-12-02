@@ -7,7 +7,7 @@ const SHOW_URL = " https://api.tvmaze.com/shows";
 
 export const Homepage = () => {
   const [data, setData] = useState([]);
-  const [clickedShow, setClickedShow] = useState(null);
+  // const [clickedShow, setClickedShow] = useState(null);
 
   useEffect(() => {
     fetch(SHOW_URL)
