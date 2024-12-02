@@ -3,28 +3,30 @@ import { useEffect, useState } from "react";
 import { Card } from "../../components/Card/Card";
 import "./HomePage.css";
 
-const SHOW_URL = " https://api.tvmaze.com/shows";
+const SHOW_URL = "https://api.tvmaze.com/shows";
 
 export const Homepage = () => {
-  const [data, setData] = useState([]);
-  // const [clickedShow, setClickedShow] = useState(null);
+  const [shows, setShows] = useState([]);
 
-  useEffect(() => {
+  const fetchAllShows = () => {
     fetch(SHOW_URL)
       .then((res) => res.json())
-      .then((data) => setData(data));
-  }, []);
-  console.log(data);
+      .then((data) => setShows(data));
+  };
 
-  const top50Shows = data
+  useEffect(() => {
+    fetchAllShows();
+  }, []);
+
+  const top50Shows = shows
     .sort((a, b) => b.rating.average - a.rating.average)
     .slice(0, 50);
 
   return (
     <>
-      <div className="container">
-        {top50Shows.map((item) => (
-          <Card key={item.id} show={item} />
+      <div className="show-container">
+        {top50Shows.map((show) => (
+          <Card key={show.id} show={show} />
         ))}
       </div>
     </>

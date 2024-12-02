@@ -9,7 +9,7 @@ const App = () => {
   return (
     <Routes>
       <Route
-        path="/shows"
+        path="/"
         element={
           <>
             <Header />
