@@ -43,4 +43,4 @@ export const KontraSearch = () => {
   );
 };
 
-// console.logove menjamo za state
+// console.logove menjamo za state.
