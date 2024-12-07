@@ -157,3 +157,4 @@ function calculateAge(date) {
   return currentYear - yearOfBirth + " years";
 }
 console.log(calculateAge(new Date("06.22.1991.")));
+//
