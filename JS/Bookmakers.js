@@ -158,3 +158,4 @@ function calculateAge(date) {
 }
 console.log(calculateAge(new Date("06.22.1991.")));
 //
+//
