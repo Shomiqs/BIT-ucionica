@@ -482,3 +482,4 @@ if (average < 60) {
 } else if (average < 90) {
   console.log("B");
 } else console.log("A");
+//
